@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Задача"/>
+                <TextBox x:Name="textbox"/>
+                <Button Content="ADD" Click="Button_Click"/>
+            </StackPanel>
+           
+            <DataGrid>
 
+            </DataGrid>
+        </StackPanel>
+        
     </Grid>
 </Window>
