@@ -5,19 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prokovefa_Ver_ToDoList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="387" Width="651" Background="Beige">
     <Grid>
         <StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Задача"/>
-                <TextBox x:Name="textbox"/>
-                <Button Content="ADD" Click="Button_Click"/>
+            <StackPanel Orientation="Horizontal" Margin="40 30 0 0">
+                <TextBlock Text="Задача" Width="81" TextAlignment="Center" FontSize="20"/>
+                <TextBox x:Name="textbox" Width="267" PreviewKeyDown ="TextBlock_PreviewKeyDown" FontSize="20" TextWrapping="Wrap"/>
+                <Button Content="Добавить" Click="Button_Click" FontSize="20" Margin="10 0 0 0"/>
             </StackPanel>
-           
-            <DataGrid>
 
-            </DataGrid>
+            <ScrollViewer>
+                
+
+            <StackPanel  Margin="0 10 0 0" Height="14" Width="473">
+                <DataGrid x:Name="DG" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox Content ="gfdgdfgd"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Binding="{Binding Id}"/>
+                        <DataGridTextColumn Binding="{Binding Name}"/>
+
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="dfssdf" Width="500" Click="Button_Click_1"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                    </DataGrid.Columns>
+
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Click="MenuItem_Click" Header="Изменить">
+                                <TextBox Width="400" Name="df" PreviewKeyDown ="df_PreviewKeyDown" />
+                            </MenuItem>
+
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </StackPanel>
+            </ScrollViewer>
         </StackPanel>
-        
+
     </Grid>
 </Window>
